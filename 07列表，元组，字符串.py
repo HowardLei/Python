@@ -68,9 +68,56 @@ def demo3():
     hasNum = name.isnumeric()
     print(hasNum)
     # 6、用指定编码格式对字符串进行编码，调用 encode 方法。
-    # encode(encoding='编码格式', errors='错误的处理方法，默认为strict')
+    # encode(encoding='编码格式', errors='错误的处理方法，默认为strx`ict')
     name.encode(encoding='utf-8', errors='strict')
-    # 7、将字符串中 \t 转换为空格。调用 expandtabs()，默认的 tabsize = 8（即空格数转换为 8），
-    newWord = "OK\t"
+    # 7、将字符串中 \t 转换为空格。调用 expandtabs()，默认的 tabsize=8（即空格数转换为 8），
+    newWord = "wangnima\tis\ta\tbitch."
+    newWord.expandtabs(tabsize=1)
+    print(newWord)
+    # 8、将字符串中的部分字符串替换成新的字符串。调用 replace 方法。返回新字符串。
+    # replace(旧字符串, 新字符串[, count=替换次数（如果里面有多个相同的旧字符串，则可以指定最多替换几次）])
+    newWord = newWord.replace("wangnima", "Benz")
+    print(newWord)
+    # 9、将字符串中的所有大写转化成小写/小写转换成大写。调用 lower/upper 方法。
+    lowerStr = newWord.lower()
+    upperStr = newWord.upper()
+    print(lowerStr, upperStr)
+    # 10、字符串的拼接。用 join 方法。因为如果使用 + 号进行拼接字符串，效率会变的低下。
+    # 如何使用：分隔符的字符串.join(需要插入到的字符串的区间，如a果只有一个字符串，则会在这个字
+    # 符串之间添加分隔的字符串，如果添加多个字符串，需要将其转换成列表来使用)
+    space = ' '
+    newName = space.join(name)
+    print(newName)
+    print(" ".join(["I", "love", "MelodyBaby."]))
 
-demo3()
+
+# 4、字符串的 format 方法
+def demo4():
+    """
+    在字符串的格式化方法中，有以下几种参数：位置参数、关键字参数、格式化参数
+    """
+    # 1、位置参数。即将字符串中添加大括号并标注数字（从 0 开始，多个参数依次填写）。然后在 format
+    #            方法中依次添加里面的参数值。
+    name = "{0}".format("王尼玛")
+    age = 18
+    weight = "{0}.{1}".format(60, 2)
+    print(name, weight)
+    # 2、关键字参数：即将字符串中添加大括号，并标注里面应该填写的项目，在 format 方法后赋值
+    info = "我叫{name},今年{age}岁，重{weight}千克".format(name=name, age=age,
+                                                  weight=weight)
+    print(info)
+    # 3、格式化参数方法，与 C 语言中的格式化输出类似，又有一些区别。
+    """
+    C 语言中，格式化输出为：printf("格式化符号……", 参数……)
+    Python ：单参数：print("格式化符号" % 单参数)
+             多参数：print("格式化符号……" % (参数1, 参数2, ……))
+    """
+    news = "今天本市发生了一件重大枪击案，一名%d岁的学生被%s用枪当场打死。" % (age, name)
+    print(news)
+
+
+# 5、序列
+def demo5:
+
+
+demo4()

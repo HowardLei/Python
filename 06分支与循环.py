@@ -84,10 +84,18 @@ def demo7():
         i += 2 # 这个只是将 i 的值加 2 ，并不印象循环内部的值。
         print(i)
 
+def demo8():
+    i = 10
+    while i:
+        print("我爱鱼C")
+        i -= 1
+
+
 # demo1()
 # demo2()
 # demo3()
 # demo4()
 # demo5()
 # demo6()
-demo7()
+# demo7()
+demo8()
