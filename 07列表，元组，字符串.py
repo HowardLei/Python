@@ -160,5 +160,20 @@ def demo5():
     list4 = list(zip(a, alreadyList))
     print(list4)
 
+# MARK: 练习题
+def demo6():
+    # 这种创建列表的方法称为列表推导式
+    list1 = [(x, y) for x in range(10) for y in range(10) if x % 2 == 0 if
+             y % 2 != 0]
+    print(list1)
+    # list1 的创建的完整写法如下
+    list2 = list()
+    for x in range(10):
+        for y in range(10):
+            if x % 2 == 0:
+                if y % 2 != 0:
+                    list2.append((x, y))
+    print(list2)
 
-demo5()
+
+demo6()
