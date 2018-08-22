@@ -117,7 +117,48 @@ def demo4():
 
 
 # 5、序列
-def demo5:
+def demo5():
+    # 由于列表，元组，字符串之间都有共同点。所以这些数据统称序列，有一些共同的方法。
+    # 1、list 方法：如果不写参数，则创建一个空列表。如果里面有参数，则将参数里面的每个元素迭代
+    #              出来，形成列表
+    a = list()
+    b = list(("wangnima", "zhaosanfen", "lisi"))
+    # 2、tuple 方法：将序列转换成元组，使用方法与 list 相同
+    c = tuple("Wangnima")
+    # 3、str 方法：将数据转换成字符串
+    # 4、len 方法：返回参数的长度
+    d = len(c)
+    # 5、max 方法：返回序列中最大的值或者是(推测：按ASCII码的顺序，返回这个码的最大值所对应的字符）
+    maxElement = max(c)
+    print(maxElement)
+    # 6、min 方法：返回序列中最小的值或者是(推测：按ASCII码的顺序，返回这个码的最小值所对应的字符)
+    minElement = min(c)
+    print(minElement)
+    """
+    上边的两个方法必须是比较相同的数据类型。否则会报错。
+    listA = [123, 4546, 341]
+    listA.append("王尼玛")
+    max(listA)
+    这段代码实现起来会报错，报错原因如下：'>' not supported between instances of 'str' and 'int'
+    """
+    # 7、sum 方法：返回序偶的里面的和。注意：这里面的数据不能是非数字。
+    list1 = (12, 23, 43, 22, 1, 27)
+    print(sum(list1))
+    # 8、sorted 方法。用来正序排序序列
+    alreadyList = list(sorted(list1))
+    print(alreadyList)
+    # 9、reversed 方法，用来将序列中的元素逆序排列
+    list2 = list(reversed(alreadyList))
+    print(list2)
+    # 10、enumerate 方法。用来枚举每个序列中的元素，形成一个新元组，第一个值为索引值，第二个值为对应索引值的元素
+    list3 = list(enumerate(alreadyList))
+    for e in list3:
+        print(e)
+    # 11、zip 方法。用来包装两个序列，返回一个新的 zip 对象，对象中有 a 数组与 b 数组的结合
+    for num in range(len(alreadyList)):
+        a.append(num)
+    list4 = list(zip(a, alreadyList))
+    print(list4)
 
 
-demo4()
+demo5()
