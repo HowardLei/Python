@@ -9,10 +9,12 @@ def 函数名(参数名):
 注意：在 Python 中，参数的传递是值传递，不进行类型检查。所以需要进行类型检查时，请再写检查函数。
 补充：函数文档
     在 Python 中，用（“”“”“”）这种形式来写函数文档。因为在开发的时候，总会有时候忘记函数的功
-    能，而函数文档就是在你不知道函数的具体功能的时候提醒的工具。
+    能，而函数文档就是在你不知道函数的具体功能的时候提醒的工具。更好的理解这个函数功能。
 函数文档与注释的区别
     普通的注释只是在所处的行有提示作用
     函数文档可以在调用函数的时候 IDE 会自动识别并且显示提示的内容
+如何打印函数文档
+    函数名.__doc__（注意：函数名后面无括号）
 """
 
 
@@ -82,6 +84,32 @@ def GCD(x, y):
     print("他们两个的最大公因数为%d" % y)
 
 
+# MARK: 打印所有参数的和乘以基数 3 的结果
+def calc(*numParas):
+    res = 0
+    for e in numParas:
+        res += e
+        print("res + %d = %d" % (e, res))
+    base = 3
+    res *= base
+    print("res = %d" % res)
+
+
+# MARK: 接上面的函数要求，如果参数的最后一个值是 5 ，则设置基数为 5 ，基数不参与求和计算
+def calc2(*numParas):
+    res = 0
+    base = 3
+    for e in numParas:
+        res += e
+        print("res + %d = %d" % (e, res))
+    if numParas[len(numParas) - 1] == 5:
+        base = 5
+        res -= base
+        res *= base
+    else:
+        res *= base
+    print("res = %d" % res)
+
 # MARK: 函数的调用，直接在需要调用的地方调用即可。
 # demo1()
 # demo2("王尼玛")
@@ -89,3 +117,6 @@ print(power(2, 3))
 GCD(21, 24)
 default(name="张三丰")
 unknownParameters(123, 435, 122, 213, somebody="王尼玛")
+var = hasDoc.__doc__
+print(var)
+calc2(12, 32, 2, 4, 5)
