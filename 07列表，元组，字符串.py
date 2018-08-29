@@ -147,7 +147,7 @@ def demo5():
     # 8、sorted 方法。用来正序排序序列
     alreadyList = list(sorted(list1))
     print(alreadyList)
-    # 9、reversed 方法，用来将序列中的元素逆序排列
+    # 9、reversed 方法，用来将序列中的元素逆序排列。注意：他返回的是迭代器对象。并不是列表。
     list2 = list(reversed(alreadyList))
     print(list2)
     # 10、enumerate 方法。用来枚举每个序列中的元素，形成一个新元组，第一个值为索引值，第二个值为对应索引值的元素

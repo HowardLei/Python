@@ -110,13 +110,69 @@ def calc2(*numParas):
         res *= base
     print("res = %d" % res)
 
+
+# MARK: 寻找水仙花数
+def find():
+    for e in range(100, 1000, 1):
+        res = 0
+        for u in str(e):
+            number = int(u)
+            he = pow(number, 3)
+            res += he
+        if res == e:
+            print("%d是水仙花数" % e)
+
+
+"""
+内嵌函数：即在函数内部嵌套另外一个函数
+"""
+
+
+def func1():
+    print("这是 func1")
+    # 注意：在函数中可以嵌套函数，这个函数的作用域为 func1 中。出了 func1 ，谁都没法调用。
+    def func2():
+        print("这是 func2")
+
+    func2()
+
+def fun(var):
+    var = 1314
+    print(var, end="")
+var = 520
+fun(var)
+print(var)
+
+# MARK: 判断是否为回文
+# 方法一：根据字符串的索引进行判断
+def is_huiwen1():
+    text = input("请输入一句话")
+    for e in range(len(text) // 2):
+        if text[e] != text[len(text) - e - 1]:
+            print("不是回文联")
+            return
+    print("是回文联")
+# 方法二：将字符串反转进行比较，看是否相同。
+def is_huiwen2():
+    text = input("请输入一句话")
+    list1 = list(text)
+    list2 = list(reversed(list1))
+    # 注意：在比较的时候，必须保证他们都是列表才能进行比较。
+    if list1 == list2:
+        print("是回文串")
+    else:
+        print("不是回文串")
+# is_huiwen1()
+is_huiwen2()
 # MARK: 函数的调用，直接在需要调用的地方调用即可。
 # demo1()
 # demo2("王尼玛")
-print(power(2, 3))
-GCD(21, 24)
-default(name="张三丰")
-unknownParameters(123, 435, 122, 213, somebody="王尼玛")
-var = hasDoc.__doc__
-print(var)
-calc2(12, 32, 2, 4, 5)
+# print(power(2, 3))
+# GCD(21, 24)
+# default(name="张三丰")
+# unknownParameters(123, 435, 122, 213, somebody="王尼玛")
+# var = hasDoc.__doc__
+# print(var)
+# calc2(12, 32, 2, 4, 5)
+# find()
+# func1()
