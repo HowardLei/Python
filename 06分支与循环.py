@@ -85,10 +85,8 @@ def demo7():
         print(i)
 
 def demo8():
-    i = 10
-    while i:
-        print("我爱鱼C")
-        i -= 1
+    for i in range(10):
+        print("%d"% i)
 
 
 # demo1()
