@@ -2,6 +2,7 @@
 lambda 函数：匿名函数。这个函数可以省去定义函数名的时间
 如何创建：lambda 参数: 返回值
 """
+
 t = lambda x, y: 2 * x + y
 # print(t(2, 3))
 
