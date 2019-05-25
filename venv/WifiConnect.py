@@ -28,13 +28,14 @@ def wifiConnect(password, wifiName):
         temp_profile = interfaces.add_network_profile(profile)
         # 连接新的 WiFi
         interfaces.connect(temp_profile)
-        #设置睡眠时间
+        # 设置睡眠时间
         time.sleep(3)
         # 判断 WiFi 连接状态
         if interfaces.status() == const.IFACE_CONNECTED:
             return True
         else:
             return False
+
 
 # 读取密码本
 def readPwd():
@@ -49,5 +50,7 @@ def readPwd():
             break
         else:
             print('密码错误')
+    file.close()
+
 
 readPwd()
