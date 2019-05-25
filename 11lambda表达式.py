@@ -2,6 +2,8 @@
 lambda 函数：匿名函数。这个函数可以省去定义函数名的时间
 如何创建：lambda 参数: 返回值
 """
+from typing import re
+
 t = lambda x, y: 2 * x + y
 # print(t(2, 3))
 
@@ -16,7 +18,6 @@ for e in list(p):
 g = map(lambda x: 2 * x, range(10))
 print(tuple(g))
 t = lambda x, y=3: x * y
-
 
 def func(x):
     if x % 2:
@@ -40,6 +41,7 @@ num = 0
 for e in list_q:
     list_all.append([list_s[num], e])
     num += 1
+    num += 2
 print(list_all)
 # 上面的代码简化代码为
 list_all = list(map(lambda x, y: [x, y], [1, 3, 5, 7, 9], [2, 4, 6, 8, 10]))

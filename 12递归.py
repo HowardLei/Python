@@ -1,10 +1,8 @@
 """
 递归：函数调用自身的行为
 """
+
 # 阶乘（非递归版本）
-from _ast import If
-
-
 def lots_muitiple(x):
     res = 1
     while x:
@@ -48,7 +46,6 @@ def fibonacci_sequence_recursion(num: int):
     elif num > 2:
         return fibonacci_sequence_recursion(
             num - 1) + fibonacci_sequence_recursion(num - 2)
-
 
 print(lots_muitiple(6))
 print(fibonacci_sequence(15))
